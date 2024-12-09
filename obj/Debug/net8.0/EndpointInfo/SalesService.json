@@ -1,0 +1,206 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Sales Service API",
+    "description": "API для управления продажами.",
+    "contact": {
+      "name": "Мой GitHub",
+      "url": "https://github.com/nikitronpatron"
+    },
+    "version": "v1"
+  },
+  "paths": {
+    "/api/Sales/add-sale": {
+      "post": {
+        "tags": [
+          "Sales"
+        ],
+        "summary": "Добавление или обновление продажи",
+        "description": "Этот метод добавляет новую продажу, если она найдена по ID.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Sale"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Sale"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Sale"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Sales/update-sale": {
+      "post": {
+        "tags": [
+          "Sales"
+        ],
+        "summary": "Обновление продажи",
+        "description": "Этот метод обновляет продажу, если она найдена по ID.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Sale"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Sale"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Sale"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Sales/generate-forecast": {
+      "get": {
+        "tags": [
+          "Sales"
+        ],
+        "summary": "Генерация прогноза",
+        "description": "Этот метод делает анализ за последние N дней и на основе его делает предсказание.",
+        "parameters": [
+          {
+            "name": "daysToAnalyze",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 30
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Sales/get-analytics": {
+      "get": {
+        "tags": [
+          "Sales"
+        ],
+        "summary": "Получение аналитики",
+        "description": "Этот метод делает выводит аналитику в указанном диапазоне времени.",
+        "parameters": [
+          {
+            "name": "startDate",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Sales/get-trends": {
+      "get": {
+        "tags": [
+          "Sales"
+        ],
+        "summary": "Получение трендов",
+        "description": "Этот метод получает продажи по указанной категории",
+        "parameters": [
+          {
+            "name": "productCategory",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Sales/get-all-sales": {
+      "get": {
+        "tags": [
+          "Sales"
+        ],
+        "summary": "Получение всех продаж",
+        "description": "Этот метод выводит список все существующие продажи.",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Sale": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "productName": {
+            "type": "string",
+            "nullable": true
+          },
+          "productCategory": {
+            "type": "string",
+            "nullable": true
+          },
+          "quantity": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "price": {
+            "type": "number",
+            "format": "double"
+          },
+          "date": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

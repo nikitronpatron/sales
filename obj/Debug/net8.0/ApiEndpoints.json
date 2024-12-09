@@ -1,0 +1,97 @@
+[
+  {
+    "ContainingType": "SalesApi.Controllers.SalesController",
+    "Method": "AddSale",
+    "RelativePath": "api/Sales/add-sale",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "sale",
+        "Type": "SalesService.Sale",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SalesApi.Controllers.SalesController",
+    "Method": "GenerateForecast",
+    "RelativePath": "api/Sales/generate-forecast",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "daysToAnalyze",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SalesApi.Controllers.SalesController",
+    "Method": "GetAllSales",
+    "RelativePath": "api/Sales/get-all-sales",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SalesApi.Controllers.SalesController",
+    "Method": "GetAnalytics",
+    "RelativePath": "api/Sales/get-analytics",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "startDate",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "endDate",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SalesApi.Controllers.SalesController",
+    "Method": "GetTrends",
+    "RelativePath": "api/Sales/get-trends",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productCategory",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SalesApi.Controllers.SalesController",
+    "Method": "UpdateSale",
+    "RelativePath": "api/Sales/update-sale",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "updatedSale",
+        "Type": "SalesService.Sale",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
